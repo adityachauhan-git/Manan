@@ -1,16 +1,4 @@
-:root{
-    --background-color:#181A1B;
-    --primary-font-color:#EDEADE;
-    --secondary-color:#FFFFF0;
-}
-
-body{
-    margin: 0;
-    background-color:var(--background-color);
-    color: var(--primary-font-color);
-}
-
-.register-box-parent{
+.auth-box-parent{
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -18,7 +6,7 @@ body{
     align-items: center;
 }
 
-.register-box{
+.auth-box{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,10 +17,16 @@ body{
 
 }
 
-.registeration-inputs{
+.auth-inputs{
     display: flex;
     flex-direction: column;
+    
     gap: 10px;
+}
+
+button{
+    margin-top:20px ;
+    align-self: center;
 }
 
 input:focus{
