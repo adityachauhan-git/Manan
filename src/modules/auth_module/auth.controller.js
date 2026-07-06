@@ -3,11 +3,11 @@ import {loginService , registerService} from './auth.service.js';
 
 
 const login = (req, res) => {
-  const { email, password } = req.body;
+  const { userName, password } = req.body;
   // Call the login service with the email and password
-  loginService(email, password)
+  loginService(userName, password)
     .then((result) => {
-      // Handle successful login, e.g., send a token or user data
+      // Handle successful login, e.g., send a token or userName data
     
     res.cookie('token', result.refreshToken, { httpOnly: true, secure: true, sameSite: 'Strict' });
     
@@ -21,12 +21,12 @@ const login = (req, res) => {
 };
 
 const register = (req, res) => {
-  const { name, email, password } = req.body;
-  // Call the register service with the user details
-  registerService(name, email, password)
-    .then((user) => {
+  const { name, password } = req.body;
+  // Call the register service with the userName details
+  registerService(name, password)
+    .then((userName) => {
       // Handle successful registration
-      res.status(201).json({ message: 'User registered successfully', user });
+      res.status(201).json({ message: 'userName registered successfully', userName });
     })
     .catch((error) => {
       // Handle registration errors
@@ -41,13 +41,13 @@ const refreshToken = (req, res) => {
     }
 
     // Verify the refresh token and generate a new access token
-    jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET, (err, user) => {
+    jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET, (err, userName) => {
         if (err) {
           console.error('Refresh token verification failed:', err);
             return res.status(403).json({ message: 'Invalid refresh token' });
         }
 
-        const newAccessToken = generateAccessToken(user);
+        const newAccessToken = generateAccessToken(userName);
         res.status(200).json({ accessToken: newAccessToken });
     });
 };
@@ -59,8 +59,8 @@ const logout = (req, res) => {
 };
 
 const me = (req, res) => {
-  console.log('Current user:', req.user);
-    res.status(200).json({ message: 'Current user details', user: req.user });
+  console.log('Current userName:', req.userName);
+    res.status(200).json({ message: 'Current userName details', userName: req.userName });
 };
 
 export {login, register, refreshToken, logout, me};

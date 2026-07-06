@@ -1,7 +1,7 @@
 import {Router} from 'express';
 
 import {createLog, deleteLog, getLogById, getAllLogs, updateLog} from './logs.controller.js';
-import {auth} from '../auth_module/auth.middleware.js';
+import {auth} from '../../common/middleware/authMiddleware.js';
 
 const router = Router();
 
