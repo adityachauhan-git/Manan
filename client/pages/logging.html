@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logging</title>
+    <link rel="stylesheet" href="../css/logging.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     
 <h1>Logging</h1>
+<button id="add-log-btn">Add Log</button>
 
+<div class="parent-log-box hidden">
+<div class="log-box">
+    <button id="log-exit-button">X</button>
+    <h1 style="margin-block:0;padding: 0 0 30px 0;">Log</h1>
+    <div class="log-inputs">
+    <div class="emotion-log">
+    <label for="emotion-log-input">What are you feeling?</label>
+    <input type="text" id="emotion-log-input">
+    </div>
+    <div class="thought ">    
+    <label for="thought-log-input">What do you think about this?</label>
+    <input type="text" class="thought-log-input">
+    </div>
+</div>
+</div>
+</div>
+<ul class="list-logs">
+
+</ul>
+<script src="../js/controllers/logging.js" type="module"></script>
 </body>
 </html>

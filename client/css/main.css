@@ -3,6 +3,7 @@
     --primary-font-color:#EDEADE;
     --secondary-color:#FFFFF0;
     --button-color:#27383a;
+    --danger-color:#3a2727;
 }
 
 body{
@@ -19,3 +20,4 @@ button{
     width: 100px;
     border-radius: 8px;
 }
+

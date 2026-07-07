@@ -7,14 +7,15 @@ Manan is a reflective mood-tracking app with a Node/Express backend, PostgreSQL 
 - User authentication with login, registration, token-based session checks, refresh-token cookie support, and logout.
 - Protected user profile lookup through `/api/auth/me`.
 - Mood log CRUD through `/api/logs`.
-- Static frontend pages for the landing page, auth flow, logs dashboard, and account page.
+- Static frontend pages for login, registration, and logging.
 
 ## Project Structure
 
 - `src/server.js` boots the Express app and mounts API routes.
 - `src/modules/auth_module/` contains login, register, refresh, logout, and `/me`.
 - `src/modules/logs_module/` contains logs CRUD routes and services.
-- `client/` contains the static frontend pages and browser scripts.
+- `common/middleware/authMiddleware.js` protects API routes.
+- `client/` contains static frontend pages and browser assets.
 
 ## Prerequisites
 
@@ -45,20 +46,19 @@ Start the server:
 npm start
 ```
 
-Then open:
+Then open one of the frontend pages in your browser:
 
 ```text
-http://localhost:3000/
+http://localhost:3000/pages/login.html
+http://localhost:3000/pages/register.html
+http://localhost:3000/pages/logging.html
 ```
 
 ## Frontend Pages
 
-- `/` landing page
-- `/auth.html` login/register page
-- `/logs.html` logs dashboard
-- `/account.html` signed-in account page
-
-If a user is already logged in, the frontend redirects them to `/logs.html`.
+- `/pages/login.html` login page
+- `/pages/register.html` registration page
+- `/pages/logging.html` logging dashboard page
 
 ## API Routes
 
@@ -81,9 +81,8 @@ If a user is already logged in, the frontend redirects them to `/logs.html`.
 ## Frontend Behavior
 
 - Login stores the returned access token in `localStorage`.
-- Authenticated users are redirected to `/logs.html`.
-- The account page fetches the current user from `/api/auth/me` with the access token in the `Authorization` header.
-- Logs actions also use the access token in the `Authorization` header.
+- The current user is fetched from `/api/auth/me` for protected views.
+- Logs actions use the access token in the `Authorization` header.
 
 ## Scripts
 
@@ -94,4 +93,4 @@ If a user is already logged in, the frontend redirects them to `/logs.html`.
 
 - The frontend is served from the same Express app, so API and UI run on the same origin.
 - Refresh tokens are stored in an HTTP-only cookie.
-- The app expects the database schema for users, logs, emotions, and thoughts to already exist.
+- The app expects the database schema for users and logs to already exist.

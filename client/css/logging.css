@@ -1,0 +1,44 @@
+.parent-log-box.hidden{
+    display:none;
+}
+
+.parent-log-box{
+    position:fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 1000;
+    min-height: 100vh;
+    backdrop-filter: blur(8px);
+    
+}
+
+.log-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--secondary-color);
+    padding: 10px 10px 20px 20px;
+    border-radius: 8px;
+}
+
+#log-exit-button{
+    background-color: var(--danger-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    display: flex;
+    width: 30px;
+    height: 25px; 
+}
+
+.log-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
