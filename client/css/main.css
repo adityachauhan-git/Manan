@@ -4,7 +4,9 @@
     --secondary-color:#FFFFF0;
     --button-color:#27383a;
     --danger-color:#3a2727;
+    --nav-color:#082429;
 }
+
 
 body{
     margin: 0;
@@ -21,3 +23,20 @@ button{
     border-radius: 8px;
 }
 
+
+nav{
+
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    margin-block: 0;
+    padding: 10px;
+}
+
+nav button{
+    height: 45px;
+}

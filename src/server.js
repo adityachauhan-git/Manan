@@ -6,6 +6,8 @@ import path from 'path';
 import authRoutes from './modules/auth_module/auth.routes.js';
 import logsRoutes from './modules/logs_module/logs.routes.js';
 
+
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -13,6 +15,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
+
 
 // Mount API routes
 app.use('/api/auth', authRoutes);
@@ -28,3 +31,5 @@ try {
 } catch (error) {
     console.error('Error starting the server:', error);
 }
+
+

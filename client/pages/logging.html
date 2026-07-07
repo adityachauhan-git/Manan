@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    
-<h1>Logging</h1>
-<button id="add-log-btn">Add Log</button>
+<nav>
+
+    <h1>Logs</h1>
+    <button id="add-log-btn">Add Log</button>
+
+
+</nav>
+
 
 <div class="parent-log-box hidden">
 <div class="log-box">
     <button id="log-exit-button">X</button>
-    <h1 style="margin-block:0;padding: 0 0 30px 0;">Log</h1>
+    <h1 style="margin-block:0;padding: 0 0 30px 0;">What do you think?</h1>
     <div class="log-inputs">
     <div class="emotion-log">
     <label for="emotion-log-input">What are you feeling?</label>
@@ -24,10 +29,18 @@
     <div class="thought ">    
     <label for="thought-log-input">What do you think about this?</label>
     <input type="text" class="thought-log-input">
-    </div>
+</div>
+</div>
+<div class="log-submit-button-parent">
+<button class="log-submit-button">Log</button>
 </div>
 </div>
 </div>
+
+<div class="no-log-yet">
+    <p>No logs added yet</p>
+</div>
+
 <ul class="list-logs">
 
 </ul>

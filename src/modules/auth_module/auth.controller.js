@@ -3,9 +3,9 @@ import {loginService , registerService} from './auth.service.js';
 
 
 const login = (req, res) => {
-  const { userName, password } = req.body;
-  // Call the login service with the email and password
-  loginService(userName, password)
+  const { userName, pass } = req.body;
+  // Call the login service with the email and pass
+  loginService(userName, pass)
     .then((result) => {
       // Handle successful login, e.g., send a token or userName data
     
@@ -21,16 +21,17 @@ const login = (req, res) => {
 };
 
 const register = (req, res) => {
-  const { name, password } = req.body;
+  const { userName, pass } = req.body;
   // Call the register service with the userName details
-  registerService(name, password)
-    .then((userName) => {
+  registerService(userName, pass)
+    .then((user) => {
       // Handle successful registration
-      res.status(201).json({ message: 'userName registered successfully', userName });
+      res.status(201).json({ message: `${user} registered successfully`, user });
     })
     .catch((error) => {
       // Handle registration errors
       res.status(400).json({ message: 'Registration failed', error: error.message });
+      console.log(error)
     });
 };
 
