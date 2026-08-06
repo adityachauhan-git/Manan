@@ -3,6 +3,7 @@
     --primary-font-color:#EDEADE;
     --secondary-color:#FFFFF0;
     --button-color:#27383a;
+    --secondary-button-color:#0d292e;
     --danger-color:#3a2727;
     --nav-color:#082429;
 }
@@ -23,13 +24,17 @@ button{
     border-radius: 8px;
 }
 
+button:hover{
+    cursor: pointer;
+    background-color: var(--secondary-button-color);
+}
 
 nav{
-
-    background-color: var(--nav-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: solid var(--secondary-color);
+    border-radius: 8px;
 }
 
 nav h1{
@@ -38,5 +43,6 @@ nav h1{
 }
 
 nav button{
-    height: 45px;
+    height: 35px;
+    margin-right: 0.5vw;
 }

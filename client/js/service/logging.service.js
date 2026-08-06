@@ -10,4 +10,8 @@ function hideLogBoxService(){
     parentLogBox.classList.add('hidden')
 }
 
-export {showLogBoxService , hideLogBoxService}
+function addLogService(){
+
+}
+
+export {showLogBoxService , hideLogBoxService , addLogService}
